@@ -208,10 +208,12 @@
             </div>
 
             <div class="mt-4">
-                <x-input-label for="diajukan" value="Upah Diajukan" />
-                <x-text-input id="diajukan" name="diajukan" type="text" class="mt-1 block w-full" required autofocus />
-                <x-input-error class="mt-2" :messages="$errors->get('diajukan')" />
+                <x-input-label for="diajukand" value="Upah Diajukan" />
+                <x-text-input id="diajukand" name="diajukand" type="text" class="mt-1 block w-full" required autofocus />
+                <x-input-error class="mt-2" :messages="$errors->get('diajukand')" />
             </div>
+
+            <input type="hidden" id="diajukan" name="diajukan">
 
             <!-- Aksi -->
             <div class="mt-6 flex justify-end">
@@ -310,6 +312,29 @@
 
         // Load default (bulan ini) saat halaman dibuka
         document.addEventListener('DOMContentLoaded', getPph21Data);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const formattedInput = document.getElementById('diajukand');
+            const rawInput = document.getElementById('diajukan');
+
+            formattedInput.addEventListener('input', function (e) {
+                let rawValue = this.value.replace(/[^0-9]/g, ''); // Ambil angka saja
+
+                if (rawValue) {
+                    const formatted = formatRupiah(rawValue);
+                    this.value = formatted;
+                    rawInput.value = rawValue;
+                } else {
+                    this.value = '';
+                    rawInput.value = '';
+                }
+            });
+
+            function formatRupiah(angka) {
+                return 'Rp ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            }
+        });
     </script>
 
 </x-app-layout>
