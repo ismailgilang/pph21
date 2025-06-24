@@ -1,0 +1,1 @@
+<img src="{{asset('images/logo.jpg')}}" class="rounded-full w-24 fill-current text-white drop-shadow-lg" alt="">
