@@ -174,7 +174,7 @@
     <x-modal name="tambah-user" focusable>
         <form method="POST" action="{{ route('Bukti.store') }}" class="p-6" enctype="multipart/form-data">
             @csrf
-            <h2 class="text-lg font-medium text-black">Tambah Karyawan Baru</h2>
+            <h2 class="text-lg font-medium text-black">Tambah Bukti Baru</h2>
 
             <input type="hidden" name="users" value="{{Auth::user()->email}}">
             <!-- Nama -->

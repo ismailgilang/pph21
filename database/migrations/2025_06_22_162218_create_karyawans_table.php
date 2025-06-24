@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('hp');
             $table->string('jk');
-            $table->string('indentitas');
+            $table->string('identitas');
             $table->timestamps();
         });
     }

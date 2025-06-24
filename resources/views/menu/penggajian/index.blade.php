@@ -172,7 +172,7 @@
     <x-modal name="tambah-user" focusable>
         <form method="POST" action="{{ route('Penggajian.store') }}" class="p-6">
             @csrf
-            <h2 class="text-lg font-medium text-black">Tambah Karyawan Baru</h2>
+            <h2 class="text-lg font-medium text-black">Tambah Penggajian Baru</h2>
 
             <div class="mt-4">
                 <x-input-label for="karyawan_id" value="Karyawan" />
